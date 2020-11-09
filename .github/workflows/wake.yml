@@ -1,0 +1,14 @@
+name: Cron for Vercel
+
+on:
+  schedule:
+    - cron: '0 16 * * *' # 1am JST
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake Vercel up
+        run: curl -X POST $VERCEL_DEPLOY_URL
+        env:
+          VERCEL_DEPLOY_URL: ${{ secrets.VERCEL_DEPLOY_URL }}
