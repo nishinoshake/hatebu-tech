@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'RobotoThin';
+  font-style: normal;
+  src: local('Roboto Thin'), local('Roboto-Thin');
+}
+
+@font-face {
+  font-family: 'RobotoLight';
+  font-style: normal;
+  src: local('Roboto Light'), local('Roboto-Light');
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: YuGothic, Meiryo, sans-serif;
+  color: #333;
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+div {
+  padding: 0 3.2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+  line-height: 1;
+}
+
+header p {
+  margin-right: 2.2rem;
+  font-size: 5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", CenturyGothic, RobotoThin, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+h1 {
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  font-size: 1.7rem;
+  white-space: nowrap;
+}
+
+h1:first-line {
+  letter-spacing: 0.12em;
+}
+
+li {
+  position: relative;
+  z-index: 0;
+  line-height: 1.8;
+  padding-left: 4.6rem;
+  word-break: break-all;
+  list-style: none;
+}
+
+li+li {
+  margin-top: 1.4rem;
+}
+
+li a:nth-child(1) {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", CenturyGothic, RobotLight, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #444;
+}
+
+li a:nth-child(1):visited {
+  color: #551A8B;
+}
+
+li a:nth-child(2) {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+li a:nth-child(3) {
+  display: inline-block;
+  line-height: 1;
+  margin: 0 0.3rem;
+  padding: 0.2rem 0.3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", CenturyGothic, RobotLight, sans-serif;
+  font-size: 1rem;
+  vertical-align: 0.2em;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+li a:nth-child(3):visited {
+  color: #fff;
+  background-color: #551A8B;
+}
+
+footer {
+  padding: 6.4rem 0;
+}
+
+footer p {
+  line-height: 2;
+  font-size: 1.2rem;
+}
+
+footer a {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+button {
+  margin-top: 3.2rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.6rem;
+  background-color: #333;
+  font-size: 1.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", CenturyGothic, RobotLight, sans-serif;
+  font-weight: 300;
+  color: #fff;
+  appearance: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+pre {
+  font-family: monospace;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: justify;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre:not(:empty) {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-radius: 0.6rem;
+}
+
+@media screen and (min-width: 980px) {
+  div {
+    max-width: 1192px;
+    margin: 0 auto;
+    padding: 0 16rem;
+  }
+
+  header {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  header p {
+    margin-right: 3rem;
+    font-size: 8rem;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.24em;
+  }
+
+  h1:first-line {
+    letter-spacing: 0.14em;
+  }
+
+  li {
+    padding-left: 7rem;
+  }
+
+  li+li {
+    margin-top: 1rem;
+  }
+
+  li a:nth-child(1) {
+    top: 0.5rem;
+    font-size: 2.6rem;
+  }
+
+  li a:nth-child(2) {
+    font-size: 2rem;
+  }
+
+  li a:nth-child(3) {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    padding: 10rem 0;
+  }
+
+  footer p {
+    font-size: 1.4rem;
+  }
+
+  footer br {
+    display: none;
+  }
+
+  pre:not(:empty) {
+    margin-top: 3rem;
+  }
+}

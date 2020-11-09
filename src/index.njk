@@ -1,0 +1,54 @@
+---
+layout: layouts/default.njk
+title: 先週のはてブテクノロジー
+description: はてブのテクノロジータグで話題になったエントリーを一週間分まとめて
+---
+
+<div>
+  <header>
+    <p>{{ hatebu.releasedAt }}</p>
+    <h1>先週のはてぶ<br>テクノロジー</h1>
+  </header>
+  <ul>
+    {% for item in hatebu.items %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.index }}</a>
+        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+        <a href="{{ item.entry_url }}" target="_blank" rel="noopener">{{ item.count }}users</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <footer>
+    <p>
+      <a href="http://developer.hatena.ne.jp/ja/documents/bookmark/" target="_blank" rel="noopener">はてブのAPI</a>で取得したデータを使用しています。<br>なにかありましたら<a href="https://github.com/nishinoshake/hatebu-tech/issues" target="_blank" rel="noopener">GitHub</a>か<a href="https://twitter.com/nishinoshake" target="_blank" rel="noopener">Twitter</a>か<a href="mailto:lawson.and.7.11@gmail.com">Mail</a>まで。
+    </p>
+
+    <button type="button">SHOW JSON</button>
+    <pre></pre>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var button = document.querySelector('button')
+  var pre = document.querySelector('pre')
+  var isFetched = false
+
+  button.addEventListener('click', function () {
+    if (isFetched) {
+      return
+    }
+
+    isFetched = true
+
+    var req = new XMLHttpRequest()
+
+    req.addEventListener('load', function () {
+      pre.textContent = this.responseText
+    })
+
+    req.open('GET', '{{ hatebu.endpoint }}')
+    req.send()
+  })
+})()
+</script>
