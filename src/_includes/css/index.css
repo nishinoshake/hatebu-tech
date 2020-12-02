@@ -94,6 +94,7 @@ li a:nth-child(1) {
   font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", CenturyGothic, RobotLight, sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
+  font-feature-settings: "tnum";
   color: #444;
 }
 
