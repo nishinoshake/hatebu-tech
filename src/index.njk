@@ -22,35 +22,5 @@ description: はてブのテクノロジータグで話題になったエント�
     <p>
       <a href="http://developer.hatena.ne.jp/ja/documents/bookmark/" target="_blank" rel="noopener">はてブのAPI</a>を使用しています。<br>なにかありましたら<a href="https://github.com/nishinoshake/hatebu-tech/issues" target="_blank" rel="noopener">GitHub</a>か<a href="https://twitter.com/nishinoshake" target="_blank" rel="noopener">Twitter</a>か<a href="mailto:lawson.and.7.11@gmail.com">Mail</a>まで。
     </p>
-
-    <button type="button">SHOW JSON</button>
-    <pre></pre>
   </footer>
 </div>
-
-<script>
-// たまには昔のJSで書く
-// Jamstackの「Ja」を満たすためだけの無意味な実装
-(function () {
-  var button = document.querySelector('button')
-  var pre = document.querySelector('pre')
-  var isFetched = false
-
-  button.addEventListener('click', function () {
-    if (isFetched) {
-      return
-    }
-
-    isFetched = true
-
-    var req = new XMLHttpRequest()
-
-    req.addEventListener('load', function () {
-      pre.textContent = this.responseText
-    })
-
-    req.open('GET', '{{ hatebu.endpoint }}')
-    req.send()
-  })
-})()
-</script>
